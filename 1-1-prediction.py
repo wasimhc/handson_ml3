@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.linear_model import LinearRegression
 
 # Download and prepare the data
-data_root = "https://github.com/agilecodex/handson_ml3/blob/master/data/main/"
+data_root = "https://github.com/ageron/data/raw/main/"
 lifesat = pd.read_csv(data_root + "lifesat/lifesat.csv")
 X = lifesat[["GDP per capita (USD)"]].values
 y = lifesat[["Life satisfaction"]].values
@@ -21,6 +21,10 @@ model = LinearRegression()
 # Train the model
 model.fit(X, y)
 
-# Make a prediction for Cyprus
-X_new = [[6_1720]]  # India' GDP per capita in 2020
-print(model.predict(X_new)) # outputs [[6.30165767]]
+# Make a prediction for Bangladesh
+X_new = [[5_599]]  # Bangladesh's GDP per capita in 2020
+print(model.predict(X_new)) # outputs [[4.12860002]]
+
+# Make a prediction for India
+X_new = [[6_172]]  # India's GDP per capita in 2020
+print(model.predict(X_new)) # outputs [[4.16744312]]
